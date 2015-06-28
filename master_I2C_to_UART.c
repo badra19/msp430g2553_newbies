@@ -52,13 +52,14 @@ int main(void)
 //	BCSCTL1 = CALBC1_16MHZ;                    // Set DCO
 //	DCOCTL = CALDCO_16MHZ;
 //	UCA0CTL1 |= UCSSEL_2;                      // SMCLK
-//	UCA0BR0 = 16 OR 10???;                        // 16MHz 1M baud
+//	UCA0BR0 = 16 //OR 10???;                        // 16MHz 1M baud
 //	UCA0BR1 = 00;                              // 16MHz 1M baud
 	BCSCTL1 = CALBC1_1MHZ;                    // Set DCO
 	DCOCTL = CALDCO_1MHZ;
 	UCA0CTL1 |= UCSSEL_2;                     // SMCLK
 	UCA0BR0 = 104;                            // 1MHz 9600
 	UCA0BR1 = 0;                              // 1MHz 9600
+//	UCA0BR1 = 00;                              // 1MHz 9600	
 	UCA0MCTL = UCBRS0;                        // Modulation UCBRSx = 1
 	UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
 	// i2C
